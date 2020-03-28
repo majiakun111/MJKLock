@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MJKReadWriteLock : NSObject <MJKReadWriteLocking>
 
+- (void)lock NS_UNAVAILABLE;
+
 @end
 
 NS_ASSUME_NONNULL_END

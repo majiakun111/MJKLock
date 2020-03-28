@@ -27,7 +27,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.lock = [[MJKGCDReadWriteLock alloc] init];
-    
     for (NSInteger index = 0; index < 10; index++) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self write];

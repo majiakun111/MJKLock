@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B418D72242F80FD00917191 /* MJKRecursiveLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B418D71242F80FD00917191 /* MJKRecursiveLock.m */; };
 		5B930C1D20731AEC004D5527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C1C20731AEC004D5527 /* AppDelegate.m */; };
 		5B930C2020731AEC004D5527 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C1F20731AEC004D5527 /* ViewController.m */; };
 		5B930C2320731AEC004D5527 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B930C2120731AEC004D5527 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B418D70242F80FD00917191 /* MJKRecursiveLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKRecursiveLock.h; sourceTree = "<group>"; };
+		5B418D71242F80FD00917191 /* MJKRecursiveLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKRecursiveLock.m; sourceTree = "<group>"; };
 		5B930C1820731AEC004D5527 /* MJKLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJKLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B930C1B20731AEC004D5527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5B930C1C20731AEC004D5527 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				5B930C3620731EC0004D5527 /* MJKSemaphoreLock.m */,
 				5B930C3820732911004D5527 /* MJKPThreadMutexLock.h */,
 				5B930C3920732911004D5527 /* MJKPThreadMutexLock.m */,
+				5B418D70242F80FD00917191 /* MJKRecursiveLock.h */,
+				5B418D71242F80FD00917191 /* MJKRecursiveLock.m */,
 			);
 			path = Lock;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B418D72242F80FD00917191 /* MJKRecursiveLock.m in Sources */,
 				5B930C3A20732911004D5527 /* MJKPThreadMutexLock.m in Sources */,
 				5B930C2020731AEC004D5527 /* ViewController.m in Sources */,
 				5B930C2B20731AEC004D5527 /* main.m in Sources */,

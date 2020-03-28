@@ -37,20 +37,6 @@
     });
 }
 
-- (void)safeWrite:(void(^)(void))block {
-    if (!block) {
-        return;
-    }
-    
-    dispatch_barrier_async(_asyncQueue, ^{
-        block();
-    });
-}
-
-- (void)lock {
-    
-}
-
 - (void)unlock {
     
 }

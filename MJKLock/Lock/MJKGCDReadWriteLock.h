@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MJKGCDReadWriteLock : NSObject <MJKGCDReadWriteLocking>
+@interface MJKGCDReadWriteLock : NSObject
 
 - (void)safeRead:(void(^)(void))block;
 - (void)safeWrite:(void(^)(void))block;

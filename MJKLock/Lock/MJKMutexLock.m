@@ -21,6 +21,10 @@
     pthread_mutex_destroy(&_threadMutexLock);
 }
 
+- (void)dealloc {
+    pthread_mutex_destroy(&_threadMutexLock);
+}
+
 - (instancetype)init {
     return [self initWithLockType:MJKPThreadMutexNormalLockType];
 }

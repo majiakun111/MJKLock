@@ -47,6 +47,7 @@
     if (self.currentLockThread == pthread_self()) {
         self.lockCount--;
         if (self.lockCount <= 0) {
+            self.currentLockThread = 0;
             [self.semaphoreLock unlock];
         }
     } else {

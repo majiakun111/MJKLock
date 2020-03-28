@@ -6,16 +6,20 @@
 //  Copyright © 2018年 Ansel. All rights reserved.
 //
 
-#import "MJKPThreadMutexLock.h"
+#import "MJKMutexLock.h"
 #import <pthread/pthread.h>
 
-@interface MJKPThreadMutexLock () {
+@interface MJKMutexLock () {
     pthread_mutex_t _threadMutexLock;
 }
 
 @end
 
-@implementation MJKPThreadMutexLock
+@implementation MJKMutexLock
+
+- (void)dealloc {
+    pthread_mutex_destroy(&_threadMutexLock);
+}
 
 - (instancetype)init {
     return [self initWithLockType:MJKPThreadMutexNormalLockType];

@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, MJKPThreadMutexLockType) {
     MJKPThreadMutexRecursiveLockType = 1,
 };
 
-@interface MJKPThreadMutexLock : NSObject <NSLocking>
+@interface MJKMutexLock : NSObject <NSLocking>
 
 - (instancetype)initWithLockType:(MJKPThreadMutexLockType)lockType;
 

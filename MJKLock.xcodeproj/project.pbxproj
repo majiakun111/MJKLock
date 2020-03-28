@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1F8F6B242FAFC3008DFECB /* MJKReadWriteLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F8F6A242FAFC3008DFECB /* MJKReadWriteLock.m */; };
+		5B1F8F6E242FB65D008DFECB /* MJKGCDReadWriteLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F8F6D242FB65D008DFECB /* MJKGCDReadWriteLock.m */; };
 		5B418D72242F80FD00917191 /* MJKRecursiveLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B418D71242F80FD00917191 /* MJKRecursiveLock.m */; };
 		5B930C1D20731AEC004D5527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C1C20731AEC004D5527 /* AppDelegate.m */; };
 		5B930C2020731AEC004D5527 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C1F20731AEC004D5527 /* ViewController.m */; };
@@ -16,10 +18,15 @@
 		5B930C2B20731AEC004D5527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C2A20731AEC004D5527 /* main.m */; };
 		5B930C3420731D88004D5527 /* MJKLockProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C3320731D88004D5527 /* MJKLockProxy.m */; };
 		5B930C3720731EC0004D5527 /* MJKSemaphoreLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C3620731EC0004D5527 /* MJKSemaphoreLock.m */; };
-		5B930C3A20732911004D5527 /* MJKPThreadMutexLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C3920732911004D5527 /* MJKPThreadMutexLock.m */; };
+		5B930C3A20732911004D5527 /* MJKMutexLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B930C3920732911004D5527 /* MJKMutexLock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B1F8F69242FAFC3008DFECB /* MJKReadWriteLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKReadWriteLock.h; sourceTree = "<group>"; };
+		5B1F8F6A242FAFC3008DFECB /* MJKReadWriteLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKReadWriteLock.m; sourceTree = "<group>"; };
+		5B1F8F6C242FB65D008DFECB /* MJKGCDReadWriteLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKGCDReadWriteLock.h; sourceTree = "<group>"; };
+		5B1F8F6D242FB65D008DFECB /* MJKGCDReadWriteLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKGCDReadWriteLock.m; sourceTree = "<group>"; };
+		5B1F8F6F242FB989008DFECB /* MJKLocking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKLocking.h; sourceTree = "<group>"; };
 		5B418D70242F80FD00917191 /* MJKRecursiveLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKRecursiveLock.h; sourceTree = "<group>"; };
 		5B418D71242F80FD00917191 /* MJKRecursiveLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKRecursiveLock.m; sourceTree = "<group>"; };
 		5B930C1820731AEC004D5527 /* MJKLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJKLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,8 +43,8 @@
 		5B930C3320731D88004D5527 /* MJKLockProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKLockProxy.m; sourceTree = "<group>"; };
 		5B930C3520731EC0004D5527 /* MJKSemaphoreLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKSemaphoreLock.h; sourceTree = "<group>"; };
 		5B930C3620731EC0004D5527 /* MJKSemaphoreLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKSemaphoreLock.m; sourceTree = "<group>"; };
-		5B930C3820732911004D5527 /* MJKPThreadMutexLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKPThreadMutexLock.h; sourceTree = "<group>"; };
-		5B930C3920732911004D5527 /* MJKPThreadMutexLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKPThreadMutexLock.m; sourceTree = "<group>"; };
+		5B930C3820732911004D5527 /* MJKMutexLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKMutexLock.h; sourceTree = "<group>"; };
+		5B930C3920732911004D5527 /* MJKMutexLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKMutexLock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +94,19 @@
 		5B930C3120731D3B004D5527 /* Lock */ = {
 			isa = PBXGroup;
 			children = (
+				5B1F8F6F242FB989008DFECB /* MJKLocking.h */,
 				5B930C3220731D88004D5527 /* MJKLockProxy.h */,
 				5B930C3320731D88004D5527 /* MJKLockProxy.m */,
 				5B930C3520731EC0004D5527 /* MJKSemaphoreLock.h */,
 				5B930C3620731EC0004D5527 /* MJKSemaphoreLock.m */,
-				5B930C3820732911004D5527 /* MJKPThreadMutexLock.h */,
-				5B930C3920732911004D5527 /* MJKPThreadMutexLock.m */,
+				5B930C3820732911004D5527 /* MJKMutexLock.h */,
+				5B930C3920732911004D5527 /* MJKMutexLock.m */,
 				5B418D70242F80FD00917191 /* MJKRecursiveLock.h */,
 				5B418D71242F80FD00917191 /* MJKRecursiveLock.m */,
+				5B1F8F69242FAFC3008DFECB /* MJKReadWriteLock.h */,
+				5B1F8F6A242FAFC3008DFECB /* MJKReadWriteLock.m */,
+				5B1F8F6C242FB65D008DFECB /* MJKGCDReadWriteLock.h */,
+				5B1F8F6D242FB65D008DFECB /* MJKGCDReadWriteLock.m */,
 			);
 			path = Lock;
 			sourceTree = "<group>";
@@ -170,10 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B1F8F6B242FAFC3008DFECB /* MJKReadWriteLock.m in Sources */,
 				5B418D72242F80FD00917191 /* MJKRecursiveLock.m in Sources */,
-				5B930C3A20732911004D5527 /* MJKPThreadMutexLock.m in Sources */,
+				5B930C3A20732911004D5527 /* MJKMutexLock.m in Sources */,
 				5B930C2020731AEC004D5527 /* ViewController.m in Sources */,
 				5B930C2B20731AEC004D5527 /* main.m in Sources */,
+				5B1F8F6E242FB65D008DFECB /* MJKGCDReadWriteLock.m in Sources */,
 				5B930C3720731EC0004D5527 /* MJKSemaphoreLock.m in Sources */,
 				5B930C3420731D88004D5527 /* MJKLockProxy.m in Sources */,
 				5B930C1D20731AEC004D5527 /* AppDelegate.m in Sources */,

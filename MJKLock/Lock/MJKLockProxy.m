@@ -16,16 +16,34 @@
 
 @implementation MJKLockProxy
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_lock unlock];
 }
 
 - (instancetype)initWithLock:(id<NSLocking>)lock {
+    return [self initWithLock:lock block:^{
+        [lock lock];
+    }];
+}
+
+- (instancetype)initWithReadLock:(id<MJKReadWriteLocking>)lock {
+    return [self initWithLock:lock block:^{
+        [lock readLock];
+    }];
+}
+
+- (instancetype)initWithWriteLock:(id<MJKReadWriteLocking>)lock {
+    return [self initWithLock:lock block:^{
+        [lock writeLock];
+    }];
+}
+
+#pragma mark - PrivateMethod
+
+- (instancetype)initWithLock:(id<NSLocking>)lock block:(void(^)(void))block {
     self = [super init];
     if (self) {
         self.lock = lock;
-        [self.lock lock];
     }
     
     return self;

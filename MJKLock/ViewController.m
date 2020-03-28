@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import "MJKLockProxy.h"
 #import "MJKSemaphoreLock.h"
-#import "MJKPThreadMutexLock.h"
+#import "MJKMutexLock.h"
 #import "MJKRecursiveLock.h"
+#import "MJKReadWriteLock.h"
+#import "MJKGCDReadWriteLock.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) MJKRecursiveLock *lock;
+@property (nonatomic, strong) MJKGCDReadWriteLock *lock;
 
 @end
 
@@ -24,47 +26,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.lock = [[MJKRecursiveLock alloc] init];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self test:1];
-    });
-
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self test1];
-    });
-//
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [self test:3];
-//    });
-
-}
-
-- (void)test:(NSInteger)number {
-    if (number == 6) {
-        return;
+    self.lock = [[MJKGCDReadWriteLock alloc] init];
+    
+    for (NSInteger index = 0; index < 10; index++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self write];
+        });
     }
-   
-    MJKLockProxy *lockproxy = [[MJKLockProxy alloc] initWithLock:self.lock];
-    NSLog(@"xxx%zd", number);
-    sleep(2);
     
-    [self test:++number];
-    
-    lockproxy = nil;
+    for (NSInteger index = 0; index < 10; index++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self read];
+        });
+    }
 }
 
-- (void)test1 {
-    MJKLockProxy *lockproxy = [[MJKLockProxy alloc] initWithLock:self.lock];
-    
-    NSLog(@"yyyyyyyyy");
-    
-    lockproxy = nil;
+- (void)read {
+    [self.lock safeRead:^{
+        NSLog(@"read");
+    }];
+}
+
+- (void)write {
+    [self.lock safeWrite:^{
+        NSLog(@"write");
+        sleep(10);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

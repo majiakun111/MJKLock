@@ -26,7 +26,7 @@
 		5B1F8F6A242FAFC3008DFECB /* MJKReadWriteLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKReadWriteLock.m; sourceTree = "<group>"; };
 		5B1F8F6C242FB65D008DFECB /* MJKGCDReadWriteLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKGCDReadWriteLock.h; sourceTree = "<group>"; };
 		5B1F8F6D242FB65D008DFECB /* MJKGCDReadWriteLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKGCDReadWriteLock.m; sourceTree = "<group>"; };
-		5B1F8F6F242FB989008DFECB /* MJKLocking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKLocking.h; sourceTree = "<group>"; };
+		5B1F8F6F242FB989008DFECB /* MJKReadWriteLocking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKReadWriteLocking.h; sourceTree = "<group>"; };
 		5B418D70242F80FD00917191 /* MJKRecursiveLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJKRecursiveLock.h; sourceTree = "<group>"; };
 		5B418D71242F80FD00917191 /* MJKRecursiveLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJKRecursiveLock.m; sourceTree = "<group>"; };
 		5B930C1820731AEC004D5527 /* MJKLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJKLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +94,7 @@
 		5B930C3120731D3B004D5527 /* Lock */ = {
 			isa = PBXGroup;
 			children = (
-				5B1F8F6F242FB989008DFECB /* MJKLocking.h */,
+				5B1F8F6F242FB989008DFECB /* MJKReadWriteLocking.h */,
 				5B930C3220731D88004D5527 /* MJKLockProxy.h */,
 				5B930C3320731D88004D5527 /* MJKLockProxy.m */,
 				5B930C3520731EC0004D5527 /* MJKSemaphoreLock.h */,

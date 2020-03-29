@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MJKLocking.h"
+#import "MJKReadWriteLocking.h"
 /**
  只要实现了 NSLocking 协议的都可以代理
  */

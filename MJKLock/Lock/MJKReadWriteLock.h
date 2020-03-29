@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MJKLocking.h"
+#import "MJKReadWriteLocking.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
